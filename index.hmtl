@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shadow Steps Trails Logbook</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f8fa;
+      color: #333;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #2e5c5c;
+    }
+    section {
+      background: #fff;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    textarea {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    .quote {
+      font-style: italic;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Shadow Steps Trails</h1>
+  <p style="text-align:center;">A self-paced reflection trail for curious walkers</p>
+  <div id="app"></div>
+
+  <script>
+    const checkpoints = [
+      {
+        title: "Checkpoint 1: The Still Bridge",
+        clue: "Walk where the water glides under your feet. Where cyclists ring their bells and sunlight kisses the railings. Look for the bench facing the east.",
+        prompt: "What do you hear around you?",
+        quote: "You’re not just walking—you’re unfolding."
+      },
+      {
+        title: "Checkpoint 2: The Bamboo Tunnel",
+        clue: "Where tall green stalks whisper secrets when the wind blows, just past the curve of the path that dips.",
+        prompt: "What sensation do you notice in your body right now?",
+        quote: "What does peace feel like to you?"
+      },
+      {
+        title: "Checkpoint 3: The Quiet Jetty",
+        clue: "Find the place where water meets horizon. It has wooden planks and people sometimes pause to watch the sunset.",
+        prompt: "What is one thing you’re thankful for today?",
+        quote: "Even stillness is movement."
+      }
+    ];
+
+    const app = document.getElementById("app");
+
+    checkpoints.forEach((cp, index) => {
+      const section = document.createElement("section");
+      section.innerHTML = `
+        <h2>${cp.title}</h2>
+        <p><strong>Clue:</strong> ${cp.clue}</p>
+        <p><strong>Reflection Prompt:</strong> ${cp.prompt}</p>
+        <textarea placeholder="Your response here..." rows="4"></textarea>
+        <p class="quote">${cp.quote}</p>
+      `;
+      app.appendChild(section);
+    });
+  </script>
+</body>
+</html>
